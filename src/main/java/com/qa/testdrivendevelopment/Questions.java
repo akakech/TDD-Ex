@@ -60,8 +60,22 @@ public class Questions {
 	 * evenlySpaced(4, 6, 3) → false<br>
 	 * evenlySpaced(4, 60, 9) → false
 	 */
+	/* 246, 642, 462, 264, 426, 624 */
 	public boolean evenlySpaced(int a, int b, int c) {
-		return false;
+//		if a / b = b/c   6 4 2
+		int differenceAB = a - b;
+		int differenceCB = c - b;
+		int differenceAC = a - c;
+		int differenceBC = b - c;
+		int differenceBA = b - a;
+		int differenceCA = c - a;
+		if (differenceBA == differenceCB || differenceBA == differenceAC || differenceAB == differenceBC
+				|| differenceBA == differenceBC || differenceAB == differenceCB || differenceAC == differenceCB) {
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 
 	/**
@@ -76,11 +90,11 @@ public class Questions {
 	 * nMid("Chocolate", 1) → "Choclate"<br>
 	 */
 	public String nMid(String input, int n) {
-    	return "";
+		return "";
 	}
 
 	/**
-	 * Given a string, return the boolean True if it ends in "java" and False if
+	 * Given a string, return the boolean True if it ends in "java" and False if it
 	 * does not end in "java". Ignore Case.<br>
 	 * <br>
 	 * For Example: <br>
@@ -91,8 +105,19 @@ public class Questions {
 	 * endsJava("javaiscool") → false <br>
 	 * endsJava("pythoniscool") → false <br>
 	 */
+//	
 	public boolean endsJava(String input) {
-    	return false;
+		String java = input.toLowerCase();
+		boolean endsWithJava = false;
+		if(java.endsWith("java")) {
+			endsWithJava = true;
+		}
+
+		else {
+			endsWithJava = false;
+		}
+		
+		return endsWithJava;
 	}
 
 	/**
@@ -107,7 +132,7 @@ public class Questions {
 	 * HINT: "a" == "a" if false HINT: "a".equals("a") is true
 	 */
 	public int superBlock(String input) {
-    	return -1;
+		return -1;
 	}
 
 	/**
@@ -123,7 +148,7 @@ public class Questions {
 	 * HINT: String.toLowerCase
 	 */
 	public int amISearch(String sentence) {
-    	return -1;
+		return -1;
 	}
 
 	/**
@@ -138,7 +163,23 @@ public class Questions {
 	 * fizzBuzz(8) → null
 	 */
 	public String fizzBuzz(int number) {
-    	return "";
+
+		String answer;
+		if (number % 3 == 0) {
+			if (number % 3 == 0 && number % 5 == 0) {
+				answer = "fizzbuzz";
+			} else {
+				answer = "fizz";
+			}
+		} 
+		else if (number % 5 == 0) {
+			answer = "buzz";
+		} 
+		else {
+			answer = null;
+		}
+
+		return answer;
 	}
 
 	/**
@@ -160,10 +201,51 @@ public class Questions {
 	 * <br>
 	 * HINT: Integer.parseInt
 	 */
+//	Split the string into three substrings
+//	 int num1 = substring1.parseInt num1 = "55" 55
 
+//	String substr1 = input.substring(0,1);
+//	While the index value of the string isnot null if the index value isnot null make it an integer
+//	Switch case that iterrates through each index of the string until an index.value is null.
+//Then break, next case.
+	
 	public int largest(String input) {
-    	return -1;
+//		String substr1 = input.substring(0,1);
+//		int num1 = Integer.parseInt(substr1);
+//		int num2;
+//		int num3;
+//		int num4;
+//		int num5;
+//		
+//		if(num1< 10 || num1 > 99) {
+//			return 0;
+//		}
+//		int sum =0;
+//		
+//		while(num1 >= 10) {
+//			num1-= 10; /*num1 = num1-10, this formula repeats as long as num1 is bigger or equal to 10*/
+//			sum++; /*Increment sum every iteration*/ 
+//		}
+//		
+//		while(num1 >= 1) {
+//			num1-= 1; /*num1 = num1 - 1*/
+//			sum++;
+//		}
+////		return sum;
+		return -1;
 	}
+//	public static void main(String[] args) {
+//		method1("find the spaces");
+//		}
+//		public static void method1(String input) {
+//		int spaces=0;
+//		for (int i=0; i<input.length(); i++) {
+//		if (input.substring(i, i+1).equals(" ") || i==(input.length()-1)) {
+//		spaces++;
+//		}
+//		}
+//		System.out.println("The word count is "+ spaces);
+//		}
 
 	/**
 	 * Given a string, int and a char, return a boolean value if the 'nth'
@@ -179,6 +261,6 @@ public class Questions {
 	 * HINT: String.charAt
 	 */
 	public boolean compares(String word, int index, char letter) {
-    	return false;
+		return false;
 	}
 }
